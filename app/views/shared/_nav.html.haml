@@ -1,0 +1,20 @@
+%nav.navbar.navbar-inverse
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "Anusha Personal Webpage",root_path,class: "navbar-brand"
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.divider{:role=>"seperator"}
+
+        %li
+          = link_to "Maths",catmaths_path
+
+    / /.navbar-collapse
+  / /.container-fluid

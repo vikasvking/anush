@@ -1,0 +1,19 @@
+.row
+  .col-md-4
+  .col-md-4
+    %p#notice= notice
+    .panel.panel-primary
+      .panel-heading Info
+      .panel-body
+        %p
+          %strong Topic:
+          = @catmath.topic
+        %p
+          %strong Question:
+          = @catmath.question
+
+      .panel-footer
+        = link_to 'Edit', edit_catmath_path(@catmath),class: "btn btn-info"
+        |
+        \#{link_to 'Back', catmaths_path,class: "btn btn-info"}
+  .col-md-4

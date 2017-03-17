@@ -1,0 +1,24 @@
+.row
+  .col-md-3
+    = link_to "Add revision of maths",new_catmath_path,class: "btn btn-primary"
+
+  .col-md-6
+    .panel.panel-primary
+      .panel-heading List Of previous revision
+      .panel-body
+        - @catmaths.each do |i|
+          .row
+            .col-sm-3
+              = link_to i.topic,i
+            .col-sm-3
+              = i.question
+            .col-sm-3
+              = i.created_at.to_date
+            .col-sm-3
+              = link_to "Delete Record",i,method: :delete,data: {confirm: "are you sure"},class: "btn btn-danger"
+            %hr
+
+
+
+
+  .col-md-3

@@ -1,0 +1,18 @@
+= form_for(catmath) do |f|
+  - if catmath.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(catmath.errors.count, "error")
+        prohibited this catmath from being saved:
+      %ul
+        - catmath.errors.full_messages.each do |message|
+          %li= message
+  .input-group
+    = f.label :topic
+    = f.text_field :topic,class: "form-control"
+  .input-group
+    = f.label :No_of_question
+    = f.number_field :question,class: "form-control"
+  %br
+  .actions
+    = f.submit class: "btn btn-primary"

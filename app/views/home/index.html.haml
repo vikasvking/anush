@@ -1,0 +1,30 @@
+.row
+  = render "routine"
+
+  .panel.panel-primary
+    .panel-heading Yours Stats
+    .panel-body
+      yours last revision was of
+      %b= @catmath[0].topic
+      on
+      = @catmath[0].created_at.to_date
+
+      till Now you did total of
+      - sum=0
+      - @catmath.each do |i|
+        - sum+=i.question
+      %b= sum
+      questions.
+  .panel.panel-primary
+    .panel-heading Yours Maths revision
+    .panel-body
+      - @catmath.each do |i|
+        .row
+          .col-md-4
+            %i= i.topic
+          .col-md-4
+            %b= i.question
+          .col-md-4
+            = i.created_at.to_date
+          %hr
+      = will_paginate @catmath,renderer: BootstrapPagination::Rails
