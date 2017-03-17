@@ -14,21 +14,28 @@
         None
 
       Till Now you did total of
-      - sum=0
-      - @catmath.each do |i|
-        - sum+=i.question
-      %b= sum
+
+      %b= @sum
       questions.
+      %p
+        your success rate is
+        = @right.to_f/@sum.to_f*100
+        %b %
   .panel.panel-primary
     .panel-heading Yours Maths revision
     .panel-body
       - @catmath.each do |i|
         .row
-          .col-md-4
+          .col-md-3
             %i= i.topic
-          .col-md-4
+          .col-md-3
             %b= i.question
-          .col-md-4
+            %b question done
+          .col-md-3
+            %b= @right.to_f/@sum.to_f*100
+            %b % success
+          .col-md-3
+            on
             = i.created_at.to_date
           %hr
       = will_paginate @catmath,renderer: BootstrapPagination::Rails

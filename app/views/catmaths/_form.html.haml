@@ -13,6 +13,13 @@
   .input-group
     = f.label :No_of_question
     = f.number_field :question,class: "form-control"
+  .input-group
+    = f.label :No_of_right_question
+    = f.number_field :right,class: "form-control"
+  .input-group
+    = f.label :No_of_wrong_question
+    = f.number_field :wrong,class: "form-control"
+
   %br
   .actions
     = f.submit class: "btn btn-primary"

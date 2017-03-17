@@ -11,6 +11,12 @@
         %p
           %strong Question:
           = @catmath.question
+        %p
+          %strong Right Question:
+          = @catmath.right
+        %p
+          %strong Wrong Question:
+          = @catmath.wrong
 
       .panel-footer
         = link_to 'Edit', edit_catmath_path(@catmath),class: "btn btn-info"

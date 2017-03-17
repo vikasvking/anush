@@ -69,6 +69,6 @@ class CatmathsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def catmath_params
-      params.require(:catmath).permit(:topic, :question)
+      params.require(:catmath).permit(:topic, :question,:right,:wrong)
     end
 end
