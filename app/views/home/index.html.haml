@@ -5,11 +5,15 @@
     .panel-heading Yours Stats
     .panel-body
       yours last revision was of
-      %b= @catmath[0].topic
-      on
-      = @catmath[0].created_at.to_date
+      - if @catmath[0]
+        %b= @catmath[0].topic
 
-      till Now you did total of
+        on
+        = @catmath[0].created_at.to_date
+      - else
+        None
+
+      Till Now you did total of
       - sum=0
       - @catmath.each do |i|
         - sum+=i.question
